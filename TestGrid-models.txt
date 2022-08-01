@@ -1,0 +1,17 @@
+TestGrid
+==================================================
+GridVar1:Vs_km               20                  ----40                  10                  log:False
+GridVar2:nH_init             3                   ----5                   1                   log:True
+==================================================
+FixedVars:           shock_type: C                   Bbeta: 3                   Zeta: 3.7e-15             timeJ: 5000                duration_max: 10000               
+==================================================
+model               Vs_km               nH_init
+TestGrid-0000       2.00E+01            1.00E+03
+TestGrid-0001       3.00E+01            1.00E+03
+TestGrid-0002       4.00E+01            1.00E+03
+TestGrid-0003       2.00E+01            1.00E+04
+TestGrid-0004       3.00E+01            1.00E+04
+TestGrid-0005       4.00E+01            1.00E+04
+TestGrid-0006       2.00E+01            1.00E+05
+TestGrid-0007       3.00E+01            1.00E+05
+TestGrid-0008       4.00E+01            1.00E+05
