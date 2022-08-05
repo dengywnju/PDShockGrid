@@ -46,7 +46,7 @@ class inputVars:
             self.Vars[i[1]] = valueFixedVars[i[0]]
             
 #run 2D grid
-def runGrid2D(masterDir, Workdir, GridName, GridVar1, GridVar2, FixedVars, UV_field_on = False):
+def runGrid2D(masterDir, Workdir, GridName, GridVar1, GridVar2, FixedVars, UV_field_on = False, fix_TJ_Tmax = False):
     #initialize log
     lenStr = 20
     modellog = open(GridName+'-models.txt','w', buffering = 1)
@@ -82,6 +82,8 @@ def runGrid2D(masterDir, Workdir, GridName, GridVar1, GridVar2, FixedVars, UV_fi
     for i, comb in enumerate(iterGrid):
         Params[GridVar1.name] = comb[0]
         Params[GridVar2.name] = comb[1]
+        if fix_TJ_Tmax = True:
+            Params['duration_max'] = 2*Params['timeJ']
         modelName = GridName + '-' + format(i, '04d' )
         staticParams, runParams = setModel(modelName, Params, UV_field_on = UV_field_on)
         modellog.write(modelName+(lenStr-len(modelName))*' '+format(comb[0],'.2E')+(lenStr-len(format(comb[0],'.2E')))*' '+format(comb[1],'.2E')+'\n')

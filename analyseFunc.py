@@ -288,7 +288,6 @@ class singleModel():
                 Pop = np.array(Pop)
             
             if Fit:
-                print(E,Pop)
                 line_fir = curve_fit(f_linear, E, Pop)
                 a = line_fir[0][0]
                 b = line_fir[0][1]
